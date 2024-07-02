@@ -9,6 +9,8 @@ const Navbar = () => {
   const handle = () => {
     router.push("/login");
   };
+  if (pathName.includes("dashboard"))
+    return <div className="bg-green-500">opps Dashboard Layout</div>;
   return (
     <div>
       <nav className="bg-blue-500 text-white items-center px-6 py-4 flex justify-between">
@@ -44,6 +46,16 @@ const Navbar = () => {
               }`}
             >
               contact
+            </Link>
+          </li>
+          <li>
+            <Link
+              href="/categories"
+              className={`hover:text-cyan-900 ${
+                pathName === "/categories" ? "text-cyan-900 font-bold" : ""
+              }`}
+            >
+              categories
             </Link>
           </li>
         </ul>
